@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/demo.dir/demo.cc.o -o demo   -L/usr/local/cuda/targets/x86_64-linux/lib  src/libMiniDNNLib.a src/libMiniDNNLib.a /usr/local/cuda/lib64/libcudart_static.a -ldl -Wl,-Bstatic -lrt src/libMiniDNNCudaLib.a -Wl,-Bdynamic -lcudadevrt -lcudart_static -lrt -lpthread -ldl 
