@@ -3,8 +3,8 @@
 #pragma once
 
 #include "../layer.h"
-#include "./kernels/kernels.h"
-#include "./kernels/utils.h"
+#include "./cuda/kernels.h"
+#include "./cuda/utils.h"
 #include <math.h>
 #include <iostream>
 #include <vector>
