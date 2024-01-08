@@ -1,0 +1,1 @@
+-I/usr/local/cuda/include -I"/content/drive/MyDrive/mini-dnn-cpp-master/third_party/eigen"

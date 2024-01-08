@@ -1,0 +1,7 @@
+/content/drive/MyDrive/mini-dnn-cpp-master/build/CMakeFiles/demo.dir
+/content/drive/MyDrive/mini-dnn-cpp-master/build/CMakeFiles/edit_cache.dir
+/content/drive/MyDrive/mini-dnn-cpp-master/build/CMakeFiles/rebuild_cache.dir
+/content/drive/MyDrive/mini-dnn-cpp-master/build/src/CMakeFiles/MiniDNNLib.dir
+/content/drive/MyDrive/mini-dnn-cpp-master/build/src/CMakeFiles/MiniDNNCudaLib.dir
+/content/drive/MyDrive/mini-dnn-cpp-master/build/src/CMakeFiles/edit_cache.dir
+/content/drive/MyDrive/mini-dnn-cpp-master/build/src/CMakeFiles/rebuild_cache.dir

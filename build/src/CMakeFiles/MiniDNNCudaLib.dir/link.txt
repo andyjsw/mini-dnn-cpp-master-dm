@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMiniDNNCudaLib.a CMakeFiles/MiniDNNCudaLib.dir/layer/cuda/cuda_manager.cu.o CMakeFiles/MiniDNNCudaLib.dir/layer/cuda/helper.cu.o
+/usr/bin/ranlib libMiniDNNCudaLib.a
