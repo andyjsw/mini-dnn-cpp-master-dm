@@ -112,6 +112,46 @@ int main()
     std::cout << "GPU accuracy: " << acc << std::endl;
     std::cout << "-----------------------------------------" << std::endl;
 
+
+
+    std::cout << "GPU version 2:" << std::endl;
+  Network gpu_dnn2;
+  Layer *gpu_conv12 = new ConvGPU2(1, 28, 28, 6, 5, 5);
+  Layer *gpu_pool12 = new MaxPooling(6, 24, 24, 2, 2, 2);
+  Layer *gpu_conv22 = new ConvGPU2(6, 12, 12, 16, 5, 5);
+  Layer *gpu_pool22 = new MaxPooling(16, 8, 8, 2, 2, 2);
+  Layer *gpu_fc12 = new FullyConnected(gpu_pool2->output_dim(), 120);
+  Layer *gpu_fc22 = new FullyConnected(120, 84);
+  Layer *gpu_fc32 = new FullyConnected(84, 10);
+  Layer *gpu_relu_conv12 = new ReLU;
+  Layer *gpu_relu_conv22 = new ReLU;
+  Layer *gpu_relu_fc12 = new ReLU;
+  Layer *gpu_relu_fc22 = new ReLU;
+  Layer *gpu_softmax2 = new Softmax;
+  gpu_dnn2.add_layer(gpu_conv12);
+  gpu_dnn2.add_layer(gpu_relu_conv12);
+  gpu_dnn2.add_layer(gpu_pool12);
+  gpu_dnn2.add_layer(gpu_conv22);
+  gpu_dnn2.add_layer(gpu_relu_conv22);
+  gpu_dnn2.add_layer(gpu_pool22);
+  gpu_dnn2.add_layer(gpu_fc12);
+  gpu_dnn2.add_layer(gpu_relu_fc12);
+  gpu_dnn2.add_layer(gpu_fc22);
+  gpu_dnn2.add_layer(gpu_relu_fc22);
+  gpu_dnn2.add_layer(gpu_fc32);
+  gpu_dnn2.add_layer(gpu_softmax2);
+  Loss *gpu_loss2 = new CrossEntropy;
+  gpu_dnn2.add_loss(gpu_loss2);
+  // Load parameters
+  gpu_dnn2.load_parameters("../model/params-10eps.txt");
+  timer.Start();
+  gpu_dnn2.forward(dataset.test_data);
+  timer.Stop();
+  std::cout << "GPU 2 forward time: " << timer.Elapsed() / 1000 << " secs" << std::endl;
+  acc = compute_accuracy(gpu_dnn2.output(), dataset.test_labels);
+  std::cout << "GPU 2 accuracy: " << acc << std::endl;
+  std::cout << "-----------------------------------------" << std::endl;
+
     // std::cout << "Multi-stream version:" << std::endl;
     // Network multi_dnn;
     // Layer *multi_conv1 = new Conv_gpu(1, 28, 28, 6, 5, 5, 1, 0, 0, 2);
